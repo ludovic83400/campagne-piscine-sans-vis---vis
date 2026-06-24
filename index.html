@@ -90,32 +90,78 @@ section:nth-child(even) { background: var(--vert-tres-pale); }
 .gastro-icon { font-size: 28px; margin-bottom: 0.5rem; }
 .gastro-item p { font-size: 13px; font-weight: 500; color: var(--texte); }
 
-.semaine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-.jour-card { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
-.jour-header { background: var(--vert); padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
-.jour-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: rgba(255,255,255,0.3); }
-.jour-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #8fad6a; }
-.jour-body { background: var(--blanc); padding: 1.25rem; }
-.jour-body p { font-size: 14px; color: var(--texte-secondaire); line-height: 1.6; }
-
-.dorie-box { background: var(--vert); border-radius: 16px; padding: 2.5rem 3rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; margin-top: 3rem; }
-.dorie-box h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: #ffffff; margin-bottom: 0.75rem; }
-.dorie-box p { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.65; max-width: 500px; }
-.dorie-badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 12px; padding: 1.25rem 1.75rem; text-align: center; white-space: nowrap; }
-.dorie-badge .app-name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; color: #ffffff; display: block; margin-bottom: 4px; }
-.dorie-badge .app-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
-
-.villages-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; }
-.village-pill { background: var(--blanc); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1.25rem; font-size: 14px; font-weight: 500; color: var(--vert); display: flex; align-items: center; gap: 8px; }
-.village-pill::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--vert-clair); flex-shrink: 0; }
-
-.activite-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-.activite-card { background: var(--blanc); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; }
+/* Activités avec bouton */
+.activite-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.activite-card { background: var(--blanc); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; }
 .activite-card .act-icon { font-size: 32px; margin-bottom: 1rem; }
 .activite-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: var(--vert); margin-bottom: 0.5rem; }
-.activite-card ul { list-style: none; padding: 0; }
+.activite-card ul { list-style: none; padding: 0; margin-bottom: 1.25rem; flex: 1; }
 .activite-card ul li { font-size: 13px; color: var(--texte-secondaire); padding: 3px 0 3px 14px; position: relative; }
 .activite-card ul li::before { content: '–'; position: absolute; left: 0; color: var(--vert-clair); }
+.btn-link {
+  display: inline-block;
+  background: var(--vert);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s;
+  text-align: center;
+}
+.btn-link:hover { background: var(--vert-mid); }
+
+/* Apps box */
+.app-box {
+  background: var(--vert);
+  border-radius: 16px;
+  padding: 2.5rem 3rem;
+  margin-bottom: 2rem;
+}
+.app-box h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: #ffffff; margin-bottom: 0.75rem; }
+.app-box p { font-size: 15px; color: rgba(255,255,255,0.78); line-height: 1.65; max-width: 600px; margin-bottom: 1.5rem; }
+.app-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-app {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-app:hover { background: rgba(255,255,255,0.25); }
+
+/* Périgord inattendu */
+.inattendu-box {
+  background: var(--or-pale);
+  border: 1px solid #e8d3a8;
+  border-radius: 16px;
+  padding: 2.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+.inattendu-box h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: var(--brun); margin-bottom: 0.75rem; }
+.inattendu-box p { font-size: 15px; color: var(--texte-secondaire); line-height: 1.65; max-width: 500px; margin-bottom: 1.5rem; }
+.btn-or {
+  display: inline-block;
+  background: var(--or);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn-or:hover { background: #b5852e; }
 
 footer { background: var(--vert); color: rgba(255,255,255,0.65); text-align: center; padding: 2.5rem; font-size: 13px; }
 footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', serif; }
@@ -126,7 +172,8 @@ footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', s
   section { padding: 3.5rem 1.5rem; }
   .hero { padding: 3rem 1.5rem; min-height: 70vh; }
   .rando-item { grid-template-columns: 1fr; }
-  .dorie-box { grid-template-columns: 1fr; }
+  .inattendu-box { grid-template-columns: 1fr; }
+  .app-box { padding: 2rem 1.5rem; }
 }
 </style>
 </head>
@@ -137,11 +184,11 @@ footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', s
   <a href="#village">Le village</a>
   <a href="#randos">Randonnées</a>
   <a href="#destinations">Destinations</a>
-  <a href="#gastronomie">Gastronomie</a>
-  <a href="#semaine">Idées de séjour</a>
+  <a href="#activites">Activités</a>
+  <a href="#apps">Applications</a>
 </nav>
 
-<section class="hero" style="background-color:#1c3a0a !important;background:#1c3a0a !important;">
+<section class="hero" style="background-color:#1c3a0a !important;">
   <p class="hero-eyebrow">Périgord Vert · Dordogne</p>
   <h1>Campagne, Piscine,<br><em>Sans Vis-à-Vis</em></h1>
   <p class="hero-desc">Au cœur du Périgord Ribéracois, à Saint-Martin-de-Ribérac, une base idéale pour découvrir collines, forêts, villages de caractère et grands sites de la Dordogne.</p>
@@ -149,11 +196,12 @@ footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', s
     <span class="hero-tag">🌿 Périgord Vert</span>
     <span class="hero-tag">🏊 Piscine privée</span>
     <span class="hero-tag">🌄 Campagne & calme</span>
-    <span class="hero-tag">🚶 Randonnées au départ</span>
+    <span class="hero-tag">🚶 Randonnées à proximité</span>
     <span class="hero-tag">🍷 Gastronomie locale</span>
   </div>
 </section>
 
+<!-- LE VILLAGE -->
 <section id="village">
   <p class="section-eyebrow">Saint-Martin-de-Ribérac</p>
   <h2 class="section-title">Le village & son patrimoine</h2>
@@ -177,10 +225,11 @@ footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', s
   </div>
 </section>
 
+<!-- RANDONNÉES -->
 <section id="randos">
   <p class="section-eyebrow">À pied</p>
-  <h2 class="section-title">Randonnées au départ du gîte</h2>
-  <p class="section-intro">Quatre boucles balisées accessibles directement depuis Saint-Martin-de-Ribérac, pour tous les niveaux.</p>
+  <h2 class="section-title">Randonnées dans les environs</h2>
+  <p class="section-intro">Quatre boucles balisées situées dans les environs de Saint-Martin-de-Ribérac, accessibles en quelques minutes de voiture.</p>
   <div class="rando-list">
     <div class="rando-item">
       <div>
@@ -190,7 +239,7 @@ footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', s
           <span class="badge">3h – 3h30</span>
           <span class="badge or">Balisage jaune</span>
         </div>
-        <p class="rando-desc">La randonnée incontournable du village. Elle traverse les paysages typiques du Périgord Vert et permet de découvrir l'église Saint-Martin, la Chartreuse des Gérauds, le Manoir de la Veille et les bois et vallons environnants.</p>
+        <p class="rando-desc">La randonnée incontournable du secteur. Elle traverse les paysages typiques du Périgord Vert et permet de découvrir l'église Saint-Martin, la Chartreuse des Gérauds, le Manoir de la Veille et les bois et vallons environnants.</p>
       </div>
       <div class="rando-niveau"><span class="niveau-dot"></span><span style="font-size:12px;color:var(--vert);font-weight:500;">Facile</span></div>
     </div>
@@ -230,6 +279,7 @@ footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', s
   </div>
 </section>
 
+<!-- DESTINATIONS -->
 <section id="destinations">
   <p class="section-eyebrow">Aux alentours</p>
   <h2 class="section-title">Ce qu'il y a à voir</h2>
@@ -335,43 +385,48 @@ footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', s
       </ul>
     </div>
   </div>
-
-  <p style="margin-top:2.5rem;margin-bottom:1rem;font-family:'Playfair Display',serif;font-size:18px;color:var(--vert);font-weight:600;">Les plus beaux villages</p>
-  <div class="villages-list">
-    <div class="village-pill">Aubeterre-sur-Dronne</div>
-    <div class="village-pill">Brantôme en Périgord</div>
-    <div class="village-pill">Bourdeilles</div>
-    <div class="village-pill">Saint-Jean-de-Côle</div>
-    <div class="village-pill">Saint-Amand-de-Coly</div>
-    <div class="village-pill">La Roque-Gageac</div>
-    <div class="village-pill">Domme</div>
-    <div class="village-pill">Beynac-et-Cazenac</div>
-  </div>
 </section>
 
-<section>
+<!-- ACTIVITÉS -->
+<section id="activites">
   <p class="section-eyebrow">Plein air</p>
   <h2 class="section-title">Activités nature</h2>
   <p class="section-intro">Le Périgord Vert se parcourt à pied, à vélo ou sur l'eau.</p>
   <div class="activite-grid">
     <div class="activite-card">
       <div class="act-icon">🛶</div>
-      <h3>Canoë</h3>
-      <ul><li>La Dronne</li><li>L'Isle</li><li>La Dordogne</li></ul>
+      <h3>Canoë & Kayak</h3>
+      <ul>
+        <li>La Dronne</li>
+        <li>L'Isle</li>
+        <li>La Dordogne</li>
+      </ul>
+      <a href="https://naturecanoeperigord.fr/base-de-canoe-kayak-a-riberac/" target="_blank" class="btn-link">→ Nature Canoë Périgord</a>
     </div>
     <div class="activite-card">
       <div class="act-icon">🚴</div>
-      <h3>Vélo</h3>
-      <ul><li>Voies vertes du Périgord</li><li>Petites routes du Ribéracois</li></ul>
+      <h3>Vélo & VTT</h3>
+      <ul>
+        <li>Voies vertes du Périgord</li>
+        <li>Petites routes du Ribéracois</li>
+        <li>Sites VTT balisés</li>
+      </ul>
+      <a href="https://sitesvtt.ffc.fr/sites/montagrier-en-perigord-6/?cn-reloaded=1" target="_blank" class="btn-link">→ Sites VTT Montagrier</a>
     </div>
     <div class="activite-card">
       <div class="act-icon">🦆</div>
-      <h3>Nature & observation</h3>
-      <ul><li>Étangs de la Double</li><li>Zones humides de la Jemaye</li><li>Vallée de la Dronne</li></ul>
+      <h3>Nature & Observation</h3>
+      <ul>
+        <li>Étangs de la Double</li>
+        <li>Zones humides de la Jemaye</li>
+        <li>Vallée de la Dronne</li>
+      </ul>
+      <a href="https://www.dordogne-perigord-tourisme.fr/offres/site-departemental-du-grand-etang-de-la-jemaye-la-jemaye-la-jemaye-ponteyraud-fr-2940008/" target="_blank" class="btn-link">→ Grand Étang de la Jemaye</a>
     </div>
   </div>
 </section>
 
+<!-- GASTRONOMIE -->
 <section id="gastronomie">
   <p class="section-eyebrow">Terroir</p>
   <h2 class="section-title">Gastronomie périgourdine</h2>
@@ -387,49 +442,42 @@ footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', s
   </div>
 </section>
 
-<section id="semaine">
-  <p class="section-eyebrow">Nos suggestions</p>
-  <h2 class="section-title">Une semaine idéale</h2>
-  <p class="section-intro">Sept journées pour goûter à tout ce que le Périgord a de meilleur.</p>
-  <div class="semaine-grid">
-    <div class="jour-card">
-      <div class="jour-header"><span class="jour-num">01</span><span class="jour-label">Jour 1</span></div>
-      <div class="jour-body"><p>Ribérac · Marché du vendredi · Déjeuner en terrasse · Étangs de la Jemaye l'après-midi</p></div>
+<!-- PÉRIGORD INATTENDU -->
+<section>
+  <p class="section-eyebrow">Sorties originales</p>
+  <h2 class="section-title">Périgord Inattendu</h2>
+  <p class="section-intro">Pour sortir des sentiers battus et découvrir le Périgord autrement.</p>
+  <div class="inattendu-box">
+    <div>
+      <h3>Périgord Inattendu</h3>
+      <p>Un site dédié aux expériences hors des circuits touristiques classiques : balades secrètes, rencontres avec des producteurs locaux, lieux méconnus et curiosités du terroir. La bonne adresse pour enrichir votre séjour de découvertes authentiques et surprenantes.</p>
+      <a href="https://perigord-inattendu.fr" target="_blank" class="btn-or">→ Visiter le site</a>
     </div>
-    <div class="jour-card">
-      <div class="jour-header"><span class="jour-num">02</span><span class="jour-label">Jour 2</span></div>
-      <div class="jour-body"><p>Aubeterre-sur-Dronne · Plage sur la Dronne · Dîner en terrasse dans le village</p></div>
-    </div>
-    <div class="jour-card">
-      <div class="jour-header"><span class="jour-num">03</span><span class="jour-label">Jour 3</span></div>
-      <div class="jour-body"><p>Brantôme le matin · Bourdeilles l'après-midi · Retour par les petites routes du Ribéracois</p></div>
-    </div>
-    <div class="jour-card">
-      <div class="jour-header"><span class="jour-num">04</span><span class="jour-label">Jour 4</span></div>
-      <div class="jour-body"><p>Périgueux · Cathédrale Saint-Front · Centre historique · Musée gallo-romain</p></div>
-    </div>
-    <div class="jour-card">
-      <div class="jour-header"><span class="jour-num">05</span><span class="jour-label">Jour 5</span></div>
-      <div class="jour-body"><p>Bergerac · Vieux port · Château de Monbazillac · Dégustation de Monbazillac</p></div>
-    </div>
-    <div class="jour-card">
-      <div class="jour-header"><span class="jour-num">06</span><span class="jour-label">Jour 6</span></div>
-      <div class="jour-body"><p>Sarlat-la-Canéda · Marché traditionnel · Vallée de la Dordogne · La Roque-Gageac ou Beynac</p></div>
-    </div>
-    <div class="jour-card">
-      <div class="jour-header"><span class="jour-num">07</span><span class="jour-label">Jour 7</span></div>
-      <div class="jour-body"><p>Lascaux IV · La reproduction la plus impressionnante de la grotte préhistorique</p></div>
+    <div style="font-size: 64px; opacity: 0.25;">🗺️</div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section id="apps">
+  <p class="section-eyebrow">Outils pratiques</p>
+  <h2 class="section-title">Les applis indispensables</h2>
+  <p class="section-intro">Trois applications pour profiter pleinement de votre séjour en Périgord.</p>
+
+  <div class="app-box" style="margin-bottom: 2rem;">
+    <h3>Dorie — Tout faire en Dordogne</h3>
+    <p>Dorie répertorie l'ensemble des activités, événements et lieux à découvrir en Périgord et en Dordogne. Marchés, fêtes locales, sites naturels, visites culturelles — tout y est, mis à jour en temps réel. L'outil indispensable pour ne rien rater pendant votre séjour.</p>
+    <div class="app-buttons">
+      <a href="https://apps.apple.com/fr/app/dorie/id1434822116" target="_blank" class="btn-app">📱 Télécharger sur iOS</a>
+      <a href="https://play.google.com/store/apps/details?id=com.dorie.app" target="_blank" class="btn-app">🤖 Télécharger sur Android</a>
     </div>
   </div>
 
-  <div class="dorie-box">
-    <div>
-      <h3>L'application Dorie</h3>
-      <p>Dorie répertorie l'ensemble des activités, événements et lieux à découvrir en Périgord et en Dordogne. Marchés, fêtes locales, sites naturels, visites culturelles — tout y est, mis à jour en temps réel. L'outil indispensable pour compléter vos journées et ne rien rater pendant votre séjour.</p>
-    </div>
-    <div class="dorie-badge">
-      <span class="app-name">Dorie</span>
-      <span class="app-sub">Périgord · Dordogne</span>
+  <div class="app-box">
+    <h3>Cirkwi — Randonnées & itinéraires</h3>
+    <p>Cirkwi recense des milliers de randonnées, circuits vélo et itinéraires nature en Périgord et partout en France. Tracés GPS, cartes détaillées, avis et photos — tout ce qu'il vous faut pour préparer vos sorties à pied ou à vélo dans les environs.</p>
+    <div class="app-buttons">
+      <a href="https://apps.apple.com/fr/app/cirkwi-rando-gps-carte/id541491961" target="_blank" class="btn-app">📱 Télécharger sur iOS</a>
+      <a href="https://play.google.com/store/apps/details?id=com.cirkwi.android" target="_blank" class="btn-app">🤖 Télécharger sur Android</a>
     </div>
   </div>
 </section>
